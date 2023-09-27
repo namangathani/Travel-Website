@@ -2,7 +2,8 @@
 
    $connection = mysqli_connect('localhost','root','','book_db');
 
-   if(isset($_POST['send'])){
+   if(isset($_POST['send']))
+   {
       $name = $_POST['name'];
       $email = $_POST['email'];
       $phone = $_POST['phone'];
