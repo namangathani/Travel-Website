@@ -71,26 +71,26 @@
    <h1 class="heading-title">Our Packages</h1>
    <div class="box-container">
       <div class="box">
-         <div class="image"><img src="images/img-1.jpg" alt=""></div>
+         <div class="image"><img src="images/nyc.jpg" alt=""></div>
          <div class="content">
-            <h3>Adventure & Tour</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos, sint!</p>
+            <h3>NYC</h3>
+            <p>New York City: The City That Never Sleeps, Where Iconic Skyscrapers, Diverse Neighborhoods, And Endless Entertainment Meet In One Dynamic Metropolis.</p>
             <a href="book.php" class="btn">Book Now</a>
          </div>
       </div>
       <div class="box">
-         <div class="image"><img src="images/img-2.jpg" alt=""></div>
+         <div class="image"><img src="images/bali.jpg" alt=""></div>
          <div class="content">
-            <h3>Adventure & Tour</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos, sint!</p>
+            <h3>Bali</h3>
+            <p>Bali, Indonesia: An Enchanting Island Paradise Known For Its Stunning Beaches, Vibrant Culture, And Lush Tropical Landscapes.</p>
             <a href="book.php" class="btn">Book Now</a>
          </div>
       </div>
       <div class="box">
-         <div class="image"><img src="images/img-3.jpg" alt=""></div>
+         <div class="image"><img src="images/monaco.jpg" alt=""></div>
          <div class="content">
-            <h3>Adventure & Tour</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos, sint!</p>
+            <h3>Monaco</h3>
+            <p>Monaco: A Glamorous Microstate On The French Riviera, Famous For Its Opulent Casinos, Luxury Yachts, And Breathtaking Mediterranean Views.</p>
             <a href="book.php" class="btn">Book Now</a>
          </div>
       </div>

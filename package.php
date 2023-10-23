@@ -58,7 +58,7 @@
          $query = $pdo->query('SELECT * FROM packages');
          while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
             echo '<div class="box">';
-            echo '<div class="image"><img src="' . $row['image'] . '" alt=""></div>';
+            echo '<div class="image"><img src="./images/' . $row['image'] . '" alt=""></div>';
             echo '<div class="content">';
             echo '<h3>' . $row['title'] . '</h3>';
             echo '<p>' . $row['description'] . '</p>';
@@ -72,7 +72,6 @@
       ?>
    </div>
 
-   <div class="load-more"><span class="btn">load more</span></div>
 
 </section>
 

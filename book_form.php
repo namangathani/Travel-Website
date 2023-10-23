@@ -1,17 +1,13 @@
 <?php
-require 'PHPMailer/PHPMailer.php';
-require 'PHPMailer/SMTP.php';
+// require 'PHPMailer/PHPMailer.php';
+// require 'PHPMailer/SMTP.php';
 
 if (isset($_POST['send'])) {
    // Database connection using PDO
    try {
-       $pdo = new PDO('mysql:host=localhost;dbname=Book_db', 'root', '');
+       $pdo = new PDO('mysql:host=localhost;dbname=Book_db', 'root');
        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-   } catch (PDOException $e) {
-       die('Error: ' . $e->getMessage());
-   }
-
-   $name = $_POST['name'];
+       $name = $_POST['name'];
    $email = $_POST['email'];
    $phone = $_POST['phone'];
    $address = $_POST['address'];
@@ -20,35 +16,35 @@ if (isset($_POST['send'])) {
    $arrivals = $_POST['arrivals'];
    $leaving = $_POST['leaving'];
 
-   // Insert form data into the database
-   $query = "INSERT INTO book_form (name, email, phone, address, location, guests, arrivals, leaving) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+   print_r($_POST);
+   $query = "INSERT INTO book_form (name, email, phone, address, location, guests, arrivals, leaving) VALUES (:name,:email,:phone,:address,:location,:guests,:arrivals,:leaving)";
+
    $stmt = $pdo->prepare($query);
-   $stmt->execute([$name, $email, $phone, $address, $location, $guests, $arrivals, $leaving]);
+   $stmt->bindParam(":name",$name);
+   $stmt->bindParam(":email",$email);
+   $stmt->bindParam(":phone",$phone);
+   $stmt->bindParam(":address",$address);
+   $stmt->bindParam(":location",$location);
+   $stmt->bindParam(":guests",$guests);
+   $stmt->bindParam(":arrivals",$arrivals);
+   $stmt->bindParam(":leaving",$leaving);
+   $stmt->execute();
 
-   // Send confirmation email using PHPMailer
-   $mail = new PHPMailer\PHPMailer\PHPMailer();
-   $mail->isSMTP();
-   $mail->Host = 'smtp.yourmailprovider.com';
-   $mail->SMTPAuth = true;
-   $mail->Username = 'your_email@example.com';
-   $mail->Password = 'your_email_password';
-   $mail->SMTPSecure = 'tls';
-   $mail->Port = 587;
 
-   $mail->setFrom('your_email@example.com', 'Your Name');
-   $mail->addAddress($email, $name);
+   include 'mailing.php';
+   sendMail($email,'Booking Confirmation','Dear '.$name.', Your Booking from '.$arrivals.' to '.$leaving.' at '.$location.' has been confirmed');
 
-   $mail->isHTML(true);
-   $mail->Subject = 'Booking Confirmation';
-   $mail->Body = 'Thank you for booking with us!';
+ 
 
-   if ($mail->send()) {
-      echo 'Booking successful! Confirmation email sent.';
-   } else {
-      echo 'Booking successful, but confirmation email failed to send. Please check your email later.';
-   }
+   } catch (PDOException $e) {
+      die('Error: ' . $e->getMessage());
+  }
+   
 
-   header('location:book.php'); 
+   
 } else {
    echo 'Something went wrong. Please try again!';
 }
+
+
+?>

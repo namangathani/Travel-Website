@@ -86,7 +86,7 @@
    }
 
    // Fetch reviews from the database
-   $query = "SELECT name, rating, comment, image FROM reviews";
+   $query = "SELECT name, rating, comment FROM reviews";
    $stmt = $pdo->prepare($query);
    $stmt->execute();
    $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -102,7 +102,7 @@
        echo '<p>' . $review['comment'] . '</p>';
        echo '<h3>' . $review['name'] . '</h3>';
        echo '<span>Traveler</span>';
-       echo '<img src="' . $review['image'] . '" alt="">';
+      //  echo '<img src="' . $review['image'] . '" alt="">';
        echo '</div>';
    }
    ?>

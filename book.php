@@ -42,6 +42,24 @@
 </div>
 
 <!-- booking section starts  -->
+<?php
+      // Use PDO to connect to the database
+      try {
+         $pdo = new PDO('mysql:host=localhost;dbname=book_db', 'root', '');
+         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+         // Fetch packages from the database
+         $query = 'SELECT title FROM Packages';
+         $stmt = $pdo->prepare($query);
+         $stmt->execute();
+         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+         print_r($result);
+
+      } catch (PDOException $e) {
+         echo 'Database Error: ' . $e->getMessage();
+      }
+      ?>
+
 
 <section class="booking">
 
@@ -67,7 +85,16 @@
          </div>
          <div class="inputBox">
             <span>where to :</span>
-            <input type="text" placeholder="place you want to visit" name="location">
+            <select type="text" placeholder="place you want to visit" name="location">
+            <?php
+               foreach ($result as $destinationArray) {
+                  foreach ($destinationArray as $key => $value) {
+                     echo "<option value=\"$value\">$value</option>";
+                  }
+               }
+            ?>
+            </select>
+
          </div>
          <div class="inputBox">
             <span>how many :</span>
@@ -86,35 +113,12 @@
       <input type="submit" value="submit" class="btn" name="send">
    </form>
 
+
 </section>
 
 <!-- booking section ends -->
 
-<!-- additional PHP code to handle form submission -->
-<?php
-if (isset($_POST['send'])) {
-    // Establish a PDO connection (as shown in previous responses)
 
-    // Form data handling (as shown in previous responses)
-
-    // Send confirmation email
-    $to = 'recipient@example.com';  // Replace with the recipient's email address
-    $subject = 'Booking Confirmation';
-    $message = 'Thank you for booking your trip. Your trip details are as follows: ...'; // Customize the message
-    $headers = 'From: yourname@example.com' . "\r\n" .
-        'Reply-To: yourname@example.com' . "\r\n" .
-        'X-Mailer: PHP/' . phpversion();
-
-    if (mail($to, $subject, $message, $headers)) {
-        // Email sent successfully
-        echo '<p class="success-message">Your booking has been confirmed. Check your email for confirmation details.</p>';
-    } else {
-        // Email sending failed
-        echo '<p class="error-message">Email sending failed. Please try again.</p>';
-    }
-}
-?>
-<!-- End of additional PHP code -->
 
 <!-- swiper js link  -->
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
