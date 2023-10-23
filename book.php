@@ -48,7 +48,6 @@
    <h1 class="heading-title">book your trip!</h1>
 
    <form action="book_form.php" method="post" class="book-form">
-
       <div class="flex">
          <div class="inputBox">
             <span>name :</span>
@@ -85,21 +84,37 @@
       </div>
 
       <input type="submit" value="submit" class="btn" name="send">
-
    </form>
 
 </section>
 
 <!-- booking section ends -->
 
+<!-- additional PHP code to handle form submission -->
+<?php
+if (isset($_POST['send'])) {
+    // Establish a PDO connection (as shown in previous responses)
 
+    // Form data handling (as shown in previous responses)
 
+    // Send confirmation email
+    $to = 'recipient@example.com';  // Replace with the recipient's email address
+    $subject = 'Booking Confirmation';
+    $message = 'Thank you for booking your trip. Your trip details are as follows: ...'; // Customize the message
+    $headers = 'From: yourname@example.com' . "\r\n" .
+        'Reply-To: yourname@example.com' . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
 
-
-
-
-
-
+    if (mail($to, $subject, $message, $headers)) {
+        // Email sent successfully
+        echo '<p class="success-message">Your booking has been confirmed. Check your email for confirmation details.</p>';
+    } else {
+        // Email sending failed
+        echo '<p class="error-message">Email sending failed. Please try again.</p>';
+    }
+}
+?>
+<!-- End of additional PHP code -->
 
 <!-- swiper js link  -->
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
