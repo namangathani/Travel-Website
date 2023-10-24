@@ -16,6 +16,7 @@
       <a href="about.php">About</a>
       <a href="package.php">Packages</a>
       <a href="book.php">Book</a>
+      <a href="review.php">Review</a>
    </nav>
    <div id="menu-btn" class="fas fa-bars"></div>
 </section>

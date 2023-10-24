@@ -17,12 +17,12 @@
             $mail->isSMTP();                                           
             $mail->Host       = 'smtp.gmail.com';                    
             $mail->SMTPAuth   = true;                                  
-            $mail->Username   = 'rahul.dandona@somaiya.edu';                     
-            $mail->Password   = 'GEZ2NJCR';                               
+            $mail->Username   = 'naman.gathani@somaiya.edu';                     
+            $mail->Password   = 'namansomaiya';                               
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
             $mail->Port       = 465;     
             
-            $mail->setFrom('rahul.dandona@somaiya.edu','Travel.');
+            $mail->setFrom('naman.gathani@somaiya.edu','Travel.');
             $mail->addAddress($to,'Customer');
             $mail->isHTML(true);
             
