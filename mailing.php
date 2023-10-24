@@ -22,7 +22,7 @@
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
             $mail->Port       = 465;     
             
-            $mail->setFrom('rahul.dandona@somaiya.edu','Travel.');
+            $mail->setFrom('rahul.dandona@somaiya.edu','stay.');
             $mail->addAddress($to,'Customer');
             $mail->isHTML(true);
             

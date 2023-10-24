@@ -13,7 +13,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 <body>
@@ -22,13 +22,15 @@
 
 <section class="header">
 
-   <a href="home.php" class="logo">travel.</a>
+   <a href="home.php" class="logo">stay.</a>
 
    <nav class="navbar">
       <a href="home.php">home</a>
       <a href="about.php">about</a>
       <a href="package.php">package</a>
       <a href="book.php">book</a>
+      <a href="login.php">Admin</a>
+
    </nav>
 
    <div id="menu-btn" class="fas fa-bars"></div>
@@ -37,7 +39,7 @@
 
 <!-- header section ends -->
 
-<div class="heading" style="background:url(images/header-bg-3.png) no-repeat">
+<div class="heading" style="background:url(assets/images/header-bg-3.png) no-repeat">
    <h1>book now</h1>
 </div>
 
@@ -53,7 +55,6 @@
          $stmt = $pdo->prepare($query);
          $stmt->execute();
          $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-         print_r($result);
 
       } catch (PDOException $e) {
          echo 'Database Error: ' . $e->getMessage();
@@ -124,7 +125,7 @@
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
 <!-- custom js file link  -->
-<script src="js/script.js"></script>
+<script src="assets/js/script.js"></script>
 
 </body>
 </html>

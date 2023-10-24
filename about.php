@@ -13,7 +13,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
    <!-- custom css file link -->
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 <body>
@@ -21,19 +21,21 @@
 <!-- header section starts  -->
 
 <section class="header">
-   <a href="home.php" class="logo">travel.</a>
+   <a href="home.php" class="logo">stay.</a>
    <nav class="navbar">
       <a href="home.php">home</a>
       <a href="about.php">about</a>
       <a href="package.php">package</a>
       <a href="book.php">book</a>
+      <a href="login.php">Admin</a>
+
    </nav>
    <div id="menu-btn" class="fas fa-bars"></div>
 </section>
 
 <!-- header section ends -->
 
-<div class="heading" style="background:url(images/header-bg-1.png) no-repeat">
+<div class="heading" style="background:url(assets/images/header-bg-1.png) no-repeat">
    <h1>About Us</h1>
 </div>
 
@@ -41,7 +43,7 @@
 
 <section class="about">
    <div class="image">
-      <img src="images/about-img.jpg" alt="">
+      <img src="assets/images/about-img.jpg" alt="">
    </div>
    <div class="content">
       <h3>Why Choose Us?</h3>
@@ -74,6 +76,8 @@
 
 <section class="reviews">
    <h1 class="heading-title">Client Reviews</h1>
+   <a href="review.php" class="btn" style="text-align: center; display: block; margin: 0 auto;">Leave a review</a>
+
 
    <!-- Modify the database connection and retrieval code here -->
    <?php
@@ -115,7 +119,7 @@
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
 <!-- custom js file link -->
-<script src="js/script.js"></script>
+<script src="assets/js/script.js"></script>
 
 </body>
 </html>

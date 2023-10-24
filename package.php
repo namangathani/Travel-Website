@@ -13,7 +13,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 <body>
@@ -22,13 +22,15 @@
 
 <section class="header">
 
-   <a href="home.php" class="logo">travel</a>
+   <a href="home.php" class="logo">stay.</a>
 
    <nav class="navbar">
       <a href="home.php">home</a>
       <a href="about.php">about</a>
       <a href="package.php">package</a>
       <a href="book.php">book</a>
+      <a href="login.php">Admin</a>
+
    </nav>
 
    <div id="menu-btn" class="fas fa-bars"></div>
@@ -37,7 +39,7 @@
 
 <!-- header section ends -->
 
-<div class="heading" style="background:url(images/header-bg-2.png) no-repeat">
+<div class="heading" style="background:url(assets/images/header-bg-2.png) no-repeat">
    <h1>packages</h1>
 </div>
 
@@ -58,11 +60,11 @@
          $query = $pdo->query('SELECT * FROM packages');
          while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
             echo '<div class="box">';
-            echo '<div class="image"><img src="./images/' . $row['image'] . '" alt=""></div>';
+            echo '<div class="image"><img src="./assets/images/' . $row['image'] . '" alt=""></div>';
             echo '<div class="content">';
             echo '<h3>' . $row['title'] . '</h3>';
             echo '<p>' . $row['description'] . '</p>';
-            echo '<a href="book.php?package_id=' . $row['id'] . '" class="btn">book now</a>';
+            echo '<a href="book.php" class="btn">book now</a>';
             echo '</div>';
             echo '</div>';
          }
@@ -72,7 +74,6 @@
       ?>
    </div>
 
-
 </section>
 
 <!-- packages section ends -->
@@ -81,7 +82,7 @@
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
 <!-- custom js file link  -->
-<script src="js/script.js"></script>
+<script src="assets/js/script.js"></script>
 
 </body>
 </html>

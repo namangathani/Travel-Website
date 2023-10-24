@@ -447,7 +447,6 @@ section{
    border:var(--border);
    box-shadow: var(--box-shadow);
    background: var(--white);
-   display: none;
 }
 
 .packages .box-container .box:nth-child(1),

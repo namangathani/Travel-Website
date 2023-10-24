@@ -1,9 +1,7 @@
 <?php
-// require 'PHPMailer/PHPMailer.php';
-// require 'PHPMailer/SMTP.php';
+
 
 if (isset($_POST['send'])) {
-   // Database connection using PDO
    try {
        $pdo = new PDO('mysql:host=localhost;dbname=Book_db', 'root');
        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -32,7 +30,7 @@ if (isset($_POST['send'])) {
 
 
    include 'mailing.php';
-   sendMail($email,'Booking Confirmation','Dear '.$name.', Your Booking from '.$arrivals.' to '.$leaving.' at '.$location.' has been confirmed');
+   sendMail($email,'Booking Confirmation','Dear '.$name.', Your Booking from '.$arrivals.' to '.$leaving.' at '.$location.' has been confirmed!');
 
  
 
