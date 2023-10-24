@@ -6,19 +6,15 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>book</title>
 
-   <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
-   <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-   <!-- custom css file link  -->
    <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 <body>
    
-<!-- header section starts  -->
 
 <section class="header">
 
@@ -37,7 +33,6 @@
 
 </section>
 
-<!-- header section ends -->
 
 <div class="heading" style="background:url(assets/images/header-bg-3.png) no-repeat">
    <h1>Leave a review </h1>
@@ -47,7 +42,6 @@
 
 <section class="booking">
 
-   <!-- <h1 class="heading-title">book your trip!</h1> -->
 
    <form action="review_form.php" method="post" class="book-form">
       <div class="flex">
@@ -78,14 +72,9 @@
 
 </section>
 
-<!-- booking section ends -->
 
-
-
-<!-- swiper js link  -->
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
-<!-- custom js file link  -->
 <script src="assets/js/script.js"></script>
 
 </body>

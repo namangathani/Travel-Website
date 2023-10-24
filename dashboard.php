@@ -6,13 +6,10 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Insert into Packages</title>
 
-   <!-- swiper css link -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
-   <!-- font awesome cdn link -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-   <!-- custom css file link -->
    <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
@@ -37,7 +34,7 @@
 </div>
 
     <div id="dashboard">
-        <ul>
+        <ul class="nahh">
             <li><a href="update_packages.php">Update Packages</a></li>
             <li><a href="see_reviews.php">See All Reviews</a></li>
             <li><a href="see_bookings.php">See All Bookings</a></li>
@@ -60,9 +57,7 @@
                     default:
                         echo "Invalid page request.";
                 }
-            } else {
-                echo "Please select an option from the menu.";
-            }
+            } 
             ?>
         </div>
     </div>

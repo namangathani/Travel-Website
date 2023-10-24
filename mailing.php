@@ -17,8 +17,8 @@
             $mail->isSMTP();                                           
             $mail->Host       = 'smtp.gmail.com';                    
             $mail->SMTPAuth   = true;                                  
-            $mail->Username   = 'naman.gathani@somaiya.edu';                     
-            $mail->Password   = '';                               
+            $mail->Username   = 'rahul.dandona@somaiya.edu';                     
+            $mail->Password   = 'GEZ2NJCR';                               
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
             $mail->Port       = 465;     
             
