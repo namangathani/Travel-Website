@@ -31,7 +31,7 @@
                <a href="package.php" class="btn">Discover More</a>
             </div>
          </div>
-         <div class "swiper-slide slide" style="background:url(assets/images/home-slide-2.jpg) no-repeat">
+         <div class= "swiper-slide slide" style="background:url(assets/images/home-slide-2.jpg) no-repeat">
             <div class="content">
                <span>Explore, Discover, Travel</span>
                <h3>Discover New Places</h3>
